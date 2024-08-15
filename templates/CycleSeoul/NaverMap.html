@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>CitySeoul</title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oc5j6vm8zd"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        #content {
+            width: 50%;
+            background-color: #f0f0f0; 
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #map {
+            width: 50%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <!-- 다른 콘텐츠를 추가-->
+        <h1>CitySeoul</h1>
+    </div>
+    <div id="map"></div>
+
+    <script>
+        var mapDiv = document.getElementById('map'); 
+        var map = new naver.maps.Map(mapDiv);
+
+        var marker = new naver.maps.Marker({
+            map: map
+        });
+    </script>
+
+</body>
+</html>
