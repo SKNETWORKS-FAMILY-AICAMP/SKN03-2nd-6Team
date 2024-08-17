@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>CitySeoul</title>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oc5j6vm8zd"></script>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -12,19 +11,19 @@
     <div id="content">
         <div id="toolbar">
             <button id="bicycle-button">자전거길</button>
-            <button>툴 1</button>
-            <button>툴 2</button>
         </div>
         <div id="main-content">
             <div id="search-container">
                 <input type="text" id="search-input" placeholder="Search..." />
                 <button id="search-button">검색</button>
             </div>
-            <h1>CitySeoul</h1>
+
         </div>
     </div>
-    <div id="map" style="width:100%;height:100%;"></div>
-
+    <div id="map" style="width:90%;height:100%;"></div>
+    <script>
+        const bicycleIconUrl = "{% static 'image/bicycleicon.png' %}"
+    </script>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
