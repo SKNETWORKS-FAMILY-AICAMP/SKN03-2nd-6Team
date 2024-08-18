@@ -1,0 +1,48 @@
+/* 제목 스타일링 */
+h1 {
+    text-align: center; /* 제목 가운데 정렬 */
+    color: #333; /* 제목 색상 */
+    font-family: Arial, sans-serif; /* 제목 폰트 설정 */
+}
+
+/* 테이블 컨테이너 스타일링 */
+.table-container {
+    display: flex; /* Flexbox 사용하여 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    margin-top: 20px; /* 제목과 테이블 사이의 여백 */
+}
+
+/* 테이블 스타일링 */
+table {
+    border-collapse: collapse; /* 셀 경계선 겹침 방지 */
+    width: 33%; /* 테이블 너비를 33%로 설정 */
+    font-size: 8px; /* 테이블 폰트 사이즈 설정 */
+}
+
+/* 테이블 헤더 스타일링 */
+th {
+    background-color: #d3d3d3; /* 회색 배경색 */
+    color: #333; /* 텍스트 색상 */
+    padding: 3px; /* 셀 안쪽 여백을 줄임 */
+    border: 1px solid #ddd; /* 경계선 색상 */
+    text-align: center; /* 헤더 텍스트 가운데 정렬 */
+}
+
+/* 테이블 데이터 셀 스타일링 */
+td {
+    background-color: #f5f5dc; /* 상아색 배경색 */
+    padding: 3px; /* 셀 안쪽 여백을 줄임 */
+    border: 1px solid #ddd; /* 경계선 색상 */
+    text-align: center; /* 데이터 셀 가운데 정렬 */
+}
+
+/* 짝수 행의 배경색 */
+tr:nth-child(even) {
+    background-color: #f0f0f0; /* 연한 회색 배경색 */
+}
+
+/* 마우스 오버 시 행 배경색 */
+tr:hover {
+    background-color: #e0e0e0; /* 마우스 오버 시 배경색 */
+}
