@@ -13,8 +13,7 @@
             <button id="bicycle-button">자전거길</button>
         </div>
         <div id="main-content">
-            <!-- 검색 설명 칸 추가 -->
-            <div id="search-description">
+            <div id="search-description" class="description-box">
                 <p>검색할 내용을 입력한 후, '검색' 버튼을 눌러주세요.</p>
             </div>
             <div id="search-container">
@@ -22,8 +21,9 @@
                 <button id="search-button">검색</button>
             </div>
             <!-- 다른 URL로 접속하는 버튼 추가 -->
-            <div id="redirect-button-container" style="margin-top: 10px;">
-                <button id="redirect-button" onclick="window.location.href='https://example.com';">다른 페이지로 이동</button>
+            <div id="redirect-button-container" style="margin-top: 30px;" class="redirect-button">
+                <button id="redirect-button" onclick="window.location.href = window.location.origin + window.location.pathname + 'ttareungi';">따릉이</button>
+
             </div>
         </div>
     </div>
