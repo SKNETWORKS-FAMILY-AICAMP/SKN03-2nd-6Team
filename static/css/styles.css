@@ -13,7 +13,7 @@ body {
 
 #toolbar {
     width: 110px; /* 툴바의 너비 */
-    background-color: #333;
+    background-color: #11ed3d;
     color: white;
     display: flex;
     flex-direction: column;
@@ -148,4 +148,23 @@ body {
 /* 버튼 클릭 시의 스타일 */
 #redirect-button:active {
     transform: scale(0.98); /* 클릭 시 버튼 크기 약간 축소 */
+}
+
+
+/* 자전거길 버튼 기본 스타일 */
+#bicycle-button {
+    background-color: #4CAF50; /* 기본 색상 */
+    color: white; /* 기본 글씨 색상 */
+}
+
+/* 자전거길 버튼을 클릭했을 때(active 상태) */
+#bicycle-button.active {
+    background-color: #007BFF; /* 버튼이 활성화되었을 때 배경 색상 */
+    color: white; /* 활성화 시 글씨 색상 */
+}
+
+/* 자전거길 버튼에 마우스를 올렸을 때 */
+#bicycle-button:hover {
+    background-color: #0056b3; /* 호버 시 배경 색상 */
+    color: white; /* 호버 시 글씨 색상 */
 }

@@ -4,9 +4,10 @@ let markers = [];
 function initializeMap() {
     // 지도 초기화
     map = new naver.maps.Map('map', {
-        center: new naver.maps.LatLng(37.3595704, 127.105399),
+        center: new naver.maps.LatLng(37.532618, 127.028101),
         zoom: 12,
         mapTypeControl: false
+        
     });
 
     // 검색 기능 설정
@@ -72,7 +73,9 @@ function manageBicycleLayer(map, buttonId) {
     let bicycleLayer = new naver.maps.BicycleLayer();
     let button = document.getElementById(buttonId);
 
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function(event) {
+        event.preventDefault(); // 기본 링크 동작 방지
+        
         if (bicycleLayer.getMap()) {
             bicycleLayer.setMap(null);
             button.style.backgroundColor = '#4CAF50';
@@ -99,7 +102,7 @@ function setupSearch(map, searchButtonId, searchInputId) {
         searchButton.disabled = true;
         searchButton.textContent = '검색 중...';
         // 쿼리 문자열을 포함한 URL을 작성
-        let url = `/cycle/?contents_name=${encodeURIComponent(searchQuery)}`;
+        let url = `/?contents_name=${encodeURIComponent(searchQuery)}`;
         
         fetch(url, {
             method: 'GET',
@@ -117,7 +120,8 @@ function setupSearch(map, searchButtonId, searchInputId) {
         .then(data => {
             searchButton.disabled = false;
             searchButton.textContent = '검색';
-            // 기존 검색 결과 컨테이너를 제거
+
+        // 기존 검색 결과 컨테이너를 제거
             let oldResultsContainer = document.getElementById('results-container');
             if (oldResultsContainer) {
                 oldResultsContainer.remove();
@@ -126,8 +130,13 @@ function setupSearch(map, searchButtonId, searchInputId) {
             // 새로운 검색 결과 컨테이너 생성
             let resultsContainer = document.createElement('div');
             resultsContainer.id = 'results-container';
-            resultsContainer.classList.add('results-container'); 
+            resultsContainer.classList.add('results-container');
 
+            // 검색 결과를 Bootstrap 사이드바(Offcanvas)에 추가
+            let offcanvasBody = document.querySelector('.offcanvas-body');
+            if (offcanvasBody) {
+                offcanvasBody.appendChild(resultsContainer);
+            }
             if (data.status === 'success') {
                 let locations = data.locations;
 
@@ -142,9 +151,7 @@ function setupSearch(map, searchButtonId, searchInputId) {
                     resultsContainer.appendChild(locationElement);
                 });
 
-                // 결과 컨테이너를 main-content에 추가
-                document.getElementById('main-content').appendChild(resultsContainer);
-
+                
                 // 기존 마커 제거
                 removeMarkers();
 
