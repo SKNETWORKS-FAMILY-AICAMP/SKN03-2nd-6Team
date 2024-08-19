@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+#content {
+    width: 40%;
+    display: flex;
+    background-color: #f0f0f0;
+}
+
+#toolbar {
+    width: 110px; /* 툴바의 너비 */
+    background-color: #11ed3d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#toolbar button {
+    background-color: #4CAF50; /* 녹색 계열 배경색 */
+    color: #FFFFFF; /* 흰색 텍스트 색상 */
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#search-container {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+#search-input {
+    width: calc(100% - 80px); /* 검색 버튼을 위한 여백 추가 */
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#search-button {
+    width: 60px;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* 검색 결과 컨테이너 스타일 */
+#results-container {
+    margin-top: 10px; /* 검색창과의 간격 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    max-height: 300px; /* 최대 높이 설정 */
+    overflow-y: auto; /* 내용이 넘칠 경우 스크롤 추가 */
+}
+
+/* 검색 결과 항목 스타일 */
+.result-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px; /* 둥근 모서리 */
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item button {
+    background-color: #4CAF50; /* 녹색 계열 배경색 */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px; /* 둥근 모서리 */
+    font-size: 14px;
+}
+
+.result-item button:hover {
+    background-color: #45a049; /* 버튼 호버 색상 */
+}
+
+.description-box {
+    background-color: #f0f8ff; /* 부드러운 파란색 배경 */
+    border: 1px solid #b0c4de; /* 라이트 스틸 블루 테두리 */
+    border-radius: 8px; /* 둥근 모서리 */
+    padding: 15px; /* 내부 여백 */
+    margin-bottom: 10px; /* 하단 여백 */
+    font-family: 'Arial', sans-serif; /* 폰트 스타일 */
+    color: #333; /* 텍스트 색상 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 효과 */
+}
+
+/* p 태그 내의 텍스트에 대한 추가 스타일 */
+.description-box p {
+    margin: 0; /* 내부 여백 제거 */
+    font-size: 16px; /* 폰트 크기 */
+}
+
+#redirect-button {
+    background-color: #4CAF50; /* 녹색 배경 */
+    border: none; /* 테두리 제거 */
+    border-radius: 8px; /* 둥근 모서리 */
+    color: white; /* 흰색 텍스트 */
+    padding: 10px 20px; /* 상하, 좌우 여백 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    text-decoration: none; /* 밑줄 제거 */
+    display: inline-block; /* 인라인 블록으로 설정 */
+    font-size: 16px; /* 폰트 크기 */
+    margin: 4px 2px; /* 상하, 좌우 여백 */
+    cursor: pointer; /* 커서가 손 모양으로 변경 */
+    transition: background-color 0.3s, transform 0.2s; /* 배경색과 크기 변화의 애니메이션 효과 */
+}
+
+/* 버튼에 마우스를 올렸을 때의 스타일 */
+#redirect-button:hover {
+    background-color: #45a049; /* 약간 어두운 녹색 배경 */
+}
+
+/* 버튼 클릭 시의 스타일 */
+#redirect-button:active {
+    transform: scale(0.98); /* 클릭 시 버튼 크기 약간 축소 */
+}
+
+
+/* 자전거길 버튼 기본 스타일 */
+#bicycle-button {
+    background-color: #4CAF50; /* 기본 색상 */
+    color: white; /* 기본 글씨 색상 */
+}
+
+/* 자전거길 버튼을 클릭했을 때(active 상태) */
+#bicycle-button.active {
+    background-color: #007BFF; /* 버튼이 활성화되었을 때 배경 색상 */
+    color: white; /* 활성화 시 글씨 색상 */
+}
+
+/* 자전거길 버튼에 마우스를 올렸을 때 */
+#bicycle-button:hover {
+    background-color: #0056b3; /* 호버 시 배경 색상 */
+    color: white; /* 호버 시 글씨 색상 */
+}
