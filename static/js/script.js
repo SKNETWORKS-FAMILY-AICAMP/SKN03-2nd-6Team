@@ -11,10 +11,8 @@ function initializeMap() {
 
     // 검색 기능 설정
     setupSearch(map, 'search-button', 'search-input');
-
     // 자전거길 레이어 설정
     manageBicycleLayer(map, 'bicycle-button')
-
     // 줌 레벨에 따라 마커를 표시하거나 숨기는 함수 호출
     manageMarkersOnZoom(map, markers, 16);
 }
@@ -100,10 +98,9 @@ function setupSearch(map, searchButtonId, searchInputId) {
         // 검색 버튼 비활성화 및 로딩 상태 표시
         searchButton.disabled = true;
         searchButton.textContent = '검색 중...';
-
         // 쿼리 문자열을 포함한 URL을 작성
-        let url = `/?contents_name=${encodeURIComponent(searchQuery)}`;
-
+        let url = `/cycle/?contents_name=${encodeURIComponent(searchQuery)}`;
+        
         fetch(url, {
             method: 'GET',
             headers: {
@@ -120,7 +117,6 @@ function setupSearch(map, searchButtonId, searchInputId) {
         .then(data => {
             searchButton.disabled = false;
             searchButton.textContent = '검색';
-
             // 기존 검색 결과 컨테이너를 제거
             let oldResultsContainer = document.getElementById('results-container');
             if (oldResultsContainer) {
