@@ -1,9 +1,9 @@
 from django.apps import AppConfig
 
 
-class TodolistConfig(AppConfig):
+class ttareungiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'todolist'
+    name = 'ttareungi'
 
 
 from flask import Flask, render_template, jsonify
@@ -22,7 +22,7 @@ class BicycleRentalStatus(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('todolist/index.html')
+    return render_template('ttareungi/index.html')
 
 @app.route('/rental-data')
 def rental_data():

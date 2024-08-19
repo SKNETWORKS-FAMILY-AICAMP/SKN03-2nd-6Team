@@ -35,6 +35,6 @@ def map_view(request):
     map_html = m._repr_html_()
 
     # 템플릿에 map_html을 전달
-    return render(request, 'todolist/index.html', {'map_html': map_html})
+    return render(request, 'ttareungi/index.html', {'map_html': map_html})
 
 
