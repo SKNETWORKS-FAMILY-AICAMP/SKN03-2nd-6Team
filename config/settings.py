@@ -10,8 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import pymysql 
+import os 
 from pathlib import Path
-import os
+pymysql.install_as_MySQLdb()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-($c!p68@pjqn!w1n+vub5$o8*-n^x)hn3kjb0hil+ce06@ac4^'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'CycleSeoul'
+    'CycleSeoul',
+    'todolist'
 ]
 
 MIDDLEWARE = [
@@ -125,6 +130,7 @@ STATIC_PATH = os.path.join(
     BASE_DIR, "static"
 )
 STATICFILES_DIRS = (STATIC_PATH,)
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
